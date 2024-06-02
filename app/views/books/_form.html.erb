@@ -20,8 +20,17 @@
     <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
-
+<!--bookオブジェクトが新規作成か判定するメソッド-->
+<% if book.new_record? %>
   <div>
-    <%= f.submit %>
+<!--'Create Book'追記-->
+    <%= f.submit 'Create Book' %>
   </div>
+<!--新規作成された時はCreate Bookボタン表示-->
+<% else %>
+<!--既存データ編集時はUpdate Bookボタン表示-->
+  <div>
+    <%= f.submit 'Update Book' %>
+  </div>
+<% end %>
 <% end %>
